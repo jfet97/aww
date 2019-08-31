@@ -1,0 +1,28 @@
+{
+  "name": "aww",
+  "version": "0.0.2",
+  "description": "Async Iterables Interfaces for Web Workers",
+  "main": "dist/index.js",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "web",
+    "workers",
+    "async",
+    "iterables"
+  ],
+  "author": "Andrea Simone Costa andrysimo1997@gmail.com",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "rollup": "^1.20.3",
+    "rollup-plugin-babel-minify": "^9.0.0",
+    "rollup-plugin-cleanup": "^3.1.1"
+  }
+}
