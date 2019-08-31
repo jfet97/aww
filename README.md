@@ -1,6 +1,6 @@
-#aww
+# aww
 
-_Async Iterables Interfaces for Web Workers_
+__Async Iterables Interfaces for Web Workers__
 
 This is a proof of concept library that enables async iteration with web workers. Errors handling is not yet supported.
 
