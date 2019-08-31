@@ -8,6 +8,9 @@ This is a proof of concept library that enables async iteration with web workers
 npm i -S aww
 ```
 
+Do not use the `postMessage` method of my wrappers while you are async iterating: use the `reply` method instead.
+&nbsp;
+
 ## How to iterate over the invoker's incoming data (from the worker perspective)
 
 ### worker.js
@@ -28,6 +31,7 @@ const delay = (ms, v) => new Promise(res => setTimeout(res, ms, v));
 
       // next messages from the main will be handled by the async iteration
       // no sense making this awaitable
+      // DO NOT USE postMessage!
       source.reply("It's all good from worker!");
     }
 
@@ -84,6 +88,7 @@ const delay = (ms, v) => new Promise(res => setTimeout(res, ms, v));
 
       // next messages from the main will be handled by the async iteration
       // no sense making this awaitable
+      // DO NOT USE postMessage!
       myWorker.reply("It's all good from main!");
     }
 
@@ -135,6 +140,7 @@ const delay = (ms, v) => new Promise(res => setTimeout(res, ms, v));
     // start the iteration posting a message
     // because both the main and the worker are waiting to start the iteration
     // not awaitable because the subsequent async iteration will handle worker's messages
+    // DO NOT USE postMessage!
     myWorker.reply("Please start!");
 
     for await(const msg of myWorker) {
@@ -143,6 +149,7 @@ const delay = (ms, v) => new Promise(res => setTimeout(res, ms, v));
 
       // next messages from the main will be handled by the async iteration
       // no sense making this awaitable
+      // DO NOT USE postMessage!
       myWorker.reply("It's all good from main!");
     }
 
@@ -165,6 +172,7 @@ const delay = (ms, v) => new Promise(res => setTimeout(res, ms, v));
 
       // next messages from the main will be handled by the async iteration
       // no sense making this awaitable
+      // DO NOT USE postMessage!
       source.reply("It's all good from worker!");
     }
 
