@@ -15,6 +15,10 @@
     "async",
     "iterables"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfet97/aww.git"
+  },
   "author": "Andrea Simone Costa andrysimo1997@gmail.com",
   "license": "MIT",
   "engines": {
