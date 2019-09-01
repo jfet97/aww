@@ -1,6 +1,6 @@
 {
   "name": "aww",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Async Iterables Interfaces for Web Workers",
   "main": "dist/index.js",
   "files": [
@@ -24,7 +24,7 @@
   "engines": {
     "node": ">=10.0.0"
   },
-  "dependencies": {
+  "devDependencies": {
     "rollup": "^1.20.3",
     "rollup-plugin-babel-minify": "^9.0.0",
     "rollup-plugin-cleanup": "^3.1.1"
