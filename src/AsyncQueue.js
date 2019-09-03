@@ -17,19 +17,23 @@ export class AsyncQueue {
     });
 
     this.resolve({
-      value,
+      value: Promise.resolve(value), // normalize the value
       nextPromise,
     });
 
     this.resolve = resolveNext;
   }
 
-  async get() {
+  get() {
     // advance the head
 
     const resultingPromise = this.promise.then(({ value }) => value);
-    this.promise = this.promise.then(({ nextPromise }) => nextPromise);
+    const actualPromise = this.promise;
+
+    // defer next node resolution until the current is solved
+    this.promise = resultingPromise.then(() => actualPromise).then(({ nextPromise }) => nextPromise);
 
     return resultingPromise;
   }
+
 }
