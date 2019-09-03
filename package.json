@@ -1,6 +1,6 @@
 {
   "name": "aww",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Async Iterables Interfaces for Web Workers",
   "main": "dist/index.js",
   "files": [
